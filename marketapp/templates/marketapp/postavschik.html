@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Поставщики{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 20px;">
+	<a href="{% url 'postavschikadd' %}"><button type="button" class="btn btn-danger mb-3">Добавить</button></a>
+	<a href="{% url 'postavschik_csv' %}" class="aright"><button type="button" class="btn btn-danger mb-3">Сохранить CSV</button></a>
+	<div class="row">
+		<div class="col-lg-12">
+			<div id="controls">
+        <div id="perpage">
+        	<span>Показывать по&nbsp;&nbsp;</span>
+            <select onchange="sorter.size(this.value)">
+                <option value="5">5</option>
+                <option value="10" selected="selected">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        <div id="navigation">
+            <i class="fas fa-angle-double-left" onclick="sorter.move(-1,true)"></i>
+            <i class="fas fa-angle-left" onclick="sorter.move(-1)"></i>
+            <i class="fas fa-angle-right" onclick="sorter.move(1)"></i>
+            <i class="fas fa-angle-double-right" onclick="sorter.move(1,true)"></i>
+        </div>
+        <div id="text">Страница <span id="currentpage"></span> из <span id="pagelimit"></span></div>
+    </div>
+			<table id="table" class="sortable table table-hover table-white">
+			    	<thead>
+				        <tr>
+				        	<th scope="col">Id</th>
+				        	<th scope="col">ОГРН</th>
+				        	<th scope="col">Организация</th>
+				        	<th scope="col">Телефон</th>
+			                <th scope="col">Изменить</th>
+			                <th scope="col">Удалить</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+			        {% for postavschik in postavschiks %}
+			        <tr>
+			        	<td>{{ postavschik.id }}</td>
+			        	<td>{{ postavschik.ogrn }}</td>
+			        	<td>{{ postavschik.name }}</td>
+			        	<td>{{ postavschik.phone }}</td>
+			        	<td><a href="edit/{{postavschik.id}}" title="Изменить"><i class="fas fa-edit"></i></a></td>
+            			<td><a href="delete/{{postavschik.id}}" title="Удалить"><i class="fas fa-trash-alt"></i></a></td>
+			        </tr>
+			        {% endfor %}
+			        </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}

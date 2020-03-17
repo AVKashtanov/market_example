@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="offset-lg-2 col-lg-8">
+        <h1>Создание новых данных</h1>
+        <form method="POST" enctype="multipart/form-data" id="ajax_form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-danger mb-3">Добавить</button>
+        </form>
+        <a class="a back" onclick="history.back(); return false;"><i class="fas fa-arrow-circle-left"></i>&nbsp;&nbsp;Назад</a>
+        </div>
+    </div>
+{% endblock %}

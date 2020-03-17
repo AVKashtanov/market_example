@@ -1,0 +1,118 @@
+a{
+	text-decoration: none;
+	font-family: Cuprum, Arial, Helvetica, sans-serif;
+}
+header{
+ /*margin-top: 200px;*/
+ font-family: Cuprum, Arial, Helvetica, sans-serif;
+}
+.dws-menu *{
+	z-index: 99999;
+ margin: 0;
+ padding: 0;
+}
+.dws-menu ul,
+.dws-menu ol{
+ list-style: none;
+}
+.dws-menu > ul{
+ display: flex;
+ justify-content: center;
+}
+.dws-menu > ul li{
+ position: relative;
+ border-right: 1px solid #c7c8ca;
+
+ transition: all 0.3s ease;
+}
+.dws-menu > ul li:hover{
+    background-color: #dc3545;
+}
+.dws-menu > ul li:first-child{
+ border-left: 1px solid #b2b3b5;
+}
+.dws-menu > ul li:last-child{
+ border-right: 1px solid #babbbd;
+}
+.dws-menu > ul li > a i.fa{
+ position: absolute;
+ top: 15px;
+ left: 12px;
+ font-size: 18px;
+}
+.dws-menu > ul li a{
+ display: block;
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c9c9c9+0,f6f6f6+2,c4c5c7+98,757577+100;Custom+3 */
+ 
+ padding: 15px 30px 15px 30px;
+ font-size: 14px;
+ color: #454d55;
+ text-decoration: none;
+ text-transform:uppercase;
+ transition: all 0.2s ease;
+}
+.dws-menu > ul li:hover a{
+ color: #fff;
+}
+
+/*sub menu*/
+.dws-menu li ul{
+ position: absolute;
+ min-width: 150px;
+ display: none;
+}
+.dws-menu li > ul li{
+ border: 1px solid #c7c8ca;
+}
+.dws-menu li > ul li a{
+ padding: 10px;
+ text-transform: none;
+ background: #e4e4e5;
+}
+.dws-menu li > ul li ul{
+ position: absolute;
+ right: -150px;
+ top: 0;
+}
+.dws-menu li:hover > ul{
+ display: block;
+}
+
+#controls {
+    margin: auto;
+    font-size: 16px;
+}
+
+#perpage {
+    float: left;
+    width: 30%;
+}
+
+#perpage select {
+    float: left;
+    font-size: 11px
+}
+
+#perpage span {
+    float: left;
+}
+
+#navigation {
+    float: left;
+    width: 40%;
+    text-align: center
+}
+
+#navigation i {
+    cursor: pointer
+}
+
+#text {
+    float: left;
+    width: 30%;
+    text-align: right;
+}
+
+.aright{
+    float: right;
+}
